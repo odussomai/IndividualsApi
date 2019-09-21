@@ -13,6 +13,7 @@ namespace IndividualsApi.Data
         public IndividualsProfile()
         {
             CreateMap<Individual, IndividualModel>().ReverseMap();
+            //CreateMap<City, CityModel>().ReverseMap()
         }
     }
 }

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IndividualsApi.Data.Entities;
+using IndividualsApi.Extensions;
 using Microsoft.EntityFrameworkCore;
+using X.PagedList;
 
 namespace IndividualsApi.Data
 {
@@ -26,18 +28,17 @@ namespace IndividualsApi.Data
             _context.Remove(entity);
         }
 
-        public async Task<Individual[]> GetAllIndividualsAsync()
+        public async Task<IEnumerable<Individual>> GetAllIndividualsAsync(int pageIndex, int pageSize)
         {
-            IQueryable<Individual> query = _context.Individuals;
+            IQueryable<Individual> query = _context.Individuals.Include(i => i.City).Include(a => a.Relatives);
 
-            return await query.ToArrayAsync();
+            return await query.ToPagedListAsync(pageIndex, pageSize);
         }
 
 
         public async Task<Individual> GetIndividualAsync(int id)
         {
-            IQueryable<Individual> query = _context.Individuals;
-
+            IQueryable<Individual> query = _context.Individuals.Include(c => c.City);
 
             // Query It
             query = query.Where(c => c.Id == id);
@@ -48,6 +49,20 @@ namespace IndividualsApi.Data
         public async Task<bool> SaveChangesAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;
+        }
+
+        public async Task<IEnumerable<T>> FindPaged<T>(int page, int pageSize) where T : class
+        {
+            return await _context.Set<T>().ToPagedListAsync(page, pageSize);
+        }
+
+        public async Task<Individual[]> Search(string term)
+        {
+            var result = _context.Individuals.Include(c => c.City).Where(i => i.FirstName.Contains(term) ||
+                                                         i.LastName.Contains(term) ||
+                                                         i.PersonalId.Contains(term) ||
+                                                         (i.City != null &&  i.City.Name.Contains(term)));
+            return await result.ToArrayAsync();
         }
     }
 }

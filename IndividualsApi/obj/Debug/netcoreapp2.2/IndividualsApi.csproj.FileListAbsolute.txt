@@ -12,3 +12,8 @@ D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\Individ
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.dll
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.pdb
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csprojAssemblyReference.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Middleware.ExceptionMiddleware.resources
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.GenerateResource.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Middleware.ExceptionMiddleware.ka-GE.resources
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll

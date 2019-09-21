@@ -1,9 +1,6 @@
 ﻿using IndividualsApi.Data.Entities;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace IndividualsApi.Models
 {
@@ -21,7 +18,10 @@ namespace IndividualsApi.Models
         [Required]
         public DateTime DateOfBirth { get; set; }
 
+        public int CityId { get; set; }
+        public string CityName { get; set; }
 
-        public string City { get; set; }
+
+
     }
 }

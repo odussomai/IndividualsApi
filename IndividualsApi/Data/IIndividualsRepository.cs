@@ -13,7 +13,9 @@ namespace IndividualsApi.Data
         Task<bool> SaveChangesAsync();
 
         // Individuals
-        Task<Individual[]> GetAllIndividualsAsync();
+        Task<IEnumerable<Individual>> GetAllIndividualsAsync(int pageIndex, int pageSize);
         Task<Individual> GetIndividualAsync(int id);
+        Task<IEnumerable<T>> FindPaged<T>(int page, int pageSize) where T : class;
+        Task<Individual[]> Search(string term);
     }
 }
