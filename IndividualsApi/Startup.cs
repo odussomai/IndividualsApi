@@ -41,7 +41,7 @@ namespace IndividualsApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, ILogger<Startup> logger)
         {
             if (env.IsDevelopment())
             {
@@ -53,7 +53,8 @@ namespace IndividualsApi
                 app.UseHsts();
             }
 
-            app.ConfigureExceptionHandler(logger);
+            loggerFactory.AddFile("Logs/IndividualsApi-{Date}.txt");
+            app.ConfigureCustomExceptionMiddleware();
             app.UseHttpsRedirection();
             app.UseSwagger();
             app.UseSwaggerUI(opt =>

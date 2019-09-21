@@ -1,13 +1,10 @@
-﻿using IndividualsApi.Models;
+﻿using IndividualsApi.Middleware;
+using IndividualsApi.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace IndividualsApi.Extensions
 {
@@ -36,5 +33,12 @@ namespace IndividualsApi.Extensions
                 });
             });
         }
+
+        public static void ConfigureCustomExceptionMiddleware(this IApplicationBuilder app)
+        {
+            app.UseMiddleware<ExceptionMiddleware>();
+        }
+
+
     }
 }

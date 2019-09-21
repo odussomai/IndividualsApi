@@ -32,7 +32,7 @@ namespace IndividualsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<Individual[]>> Get()
         {
-            throw new Exception("Bullshit Exception");
+            throw new Exception("Mock exception");
 
             var results = await _repository.GetAllIndividualsAsync();
 
