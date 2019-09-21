@@ -36,6 +36,5 @@ namespace IndividualsApi.Data.Entities
 
         [InverseProperty("Individual")]
         public ICollection<Relation> Relatives { get; set; }
-
     }
 }

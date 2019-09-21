@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using IndividualsApi.Data;
 using IndividualsApi.Data.Entities;
+using IndividualsApi.Filters;
 using IndividualsApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,13 +13,16 @@ namespace IndividualsApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ModelValidationFilter]
     public class IndividualsController : ControllerBase
     {
         private readonly IIndividualsRepository _repository;
         private readonly IMapper _mapper;
         private readonly LinkGenerator _linkGenerator;
 
-        public IndividualsController(IIndividualsRepository repository, IMapper mapper, LinkGenerator linkGenerator)
+        public IndividualsController(IIndividualsRepository repository,
+                                     IMapper mapper,
+                                     LinkGenerator linkGenerator)
         {
             this._repository = repository;
             this._mapper = mapper;
@@ -28,18 +32,13 @@ namespace IndividualsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<Individual[]>> Get()
         {
-            try
-            {
-                var results = await _repository.GetAllIndividualsAsync();
+            throw new Exception("Bullshit Exception");
 
-                _mapper.Map<IndividualModel[]>(results);
+            var results = await _repository.GetAllIndividualsAsync();
 
-                return Ok(results);
-            }
-            catch (Exception e)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
+            _mapper.Map<IndividualModel[]>(results);
+
+            return Ok(results);
         }
 
         [HttpPost]
