@@ -47,23 +47,6 @@ namespace IndividualsApi.Controllers
             return Ok(_mapper.Map<IndividualModel[]>(results));
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<ActionResult<IndividualModel>> Put(int id, IndividualModel model)
-        {
-            var existing = await _repository.GetIndividualAsync(id);
-                
-            if(existing == null) return NotFound(_localizer["Individual Could not be found"]);
-
-            _mapper.Map(model, existing);
-
-            if (await _repository.SaveChangesAsync())
-            {
-                return Ok(_mapper.Map<IndividualModel>(existing));
-            }
-
-            return BadRequest();
-        }
-
         [HttpPost]
         public async Task<ActionResult<IndividualModel>> Post(IndividualModel model)
         {
@@ -82,6 +65,41 @@ namespace IndividualsApi.Controllers
 
             return BadRequest();
         }
+
+        [HttpPut("{id:int}")]
+        public async Task<ActionResult<IndividualModel>> Put(int id, IndividualModel model)
+        {
+            var existing = await _repository.GetIndividualAsync(id);
+                
+            if(existing == null) return NotFound(_localizer["Individual Could not be found"]);
+
+            _mapper.Map(model, existing);
+
+            if (await _repository.SaveChangesAsync())
+            {
+                return Ok(_mapper.Map<IndividualModel>(existing));
+            }
+
+            return BadRequest();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var existing = await _repository.GetIndividualAsync(id);
+
+            if (existing == null) return NotFound(_localizer["Individual Could not be found"]);
+
+            _repository.Delete(existing);
+
+            if(await _repository.SaveChangesAsync())
+            {
+                return Ok();
+            }
+
+            return BadRequest();
+        }
+        
     }
 
 
