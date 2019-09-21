@@ -1,0 +1,14 @@
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.deps.json
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.runtimeconfig.json
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.runtimeconfig.dev.json
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.dll
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.CoreCompileInputs.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorAssemblyInfo.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorAssemblyInfo.cs
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.AssemblyInfoInputs.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.AssemblyInfo.cs
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorTargetAssemblyInfo.cache
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.pdb
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.dll
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.pdb
+D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csprojAssemblyReference.cache
