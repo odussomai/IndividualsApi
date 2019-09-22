@@ -34,6 +34,9 @@ namespace IndividualsApi.Data.Entities
 
         public string Image { get; set; }
 
+        public ICollection<Phone> PhoneNumbers { get; set; }
+
+
         [InverseProperty("Individual")]
         public ICollection<Relation> Relatives { get; set; }
     }

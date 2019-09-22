@@ -17,5 +17,6 @@ namespace IndividualsApi.Data
         public DbSet<Individual> Individuals { get; set; }
         public DbSet<Relation> Relations { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<Phone> Phones { get; set; }
     }
 }
