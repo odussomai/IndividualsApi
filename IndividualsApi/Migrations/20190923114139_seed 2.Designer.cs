@@ -4,14 +4,16 @@ using IndividualsApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IndividualsApi.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
-    partial class IndividualsContextModelSnapshot : ModelSnapshot
+    [Migration("20190923114139_seed 2")]
+    partial class seed2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,23 +32,6 @@ namespace IndividualsApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Tbilisi"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Kutaisi"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Batumi"
-                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
@@ -85,7 +70,6 @@ namespace IndividualsApi.Migrations
                         new
                         {
                             Id = 1,
-                            CityId = 1,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Aleksandre",
                             Image = "",
@@ -96,7 +80,6 @@ namespace IndividualsApi.Migrations
                         new
                         {
                             Id = 2,
-                            CityId = 2,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Another",
                             Image = "",

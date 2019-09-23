@@ -62,13 +62,14 @@ namespace IndividualsApi.Controllers
         {
             var individual = _mapper.Map<Individual>(model);
 
-            if(individual.City != null)
+            if(model.CityId != 0)
             {
-                var city = await _repository.GetCityByIdAsync(individual.City.Id);
+                var city = await _repository.GetCityByIdAsync(model.CityId);
 
                 if (city == null) return BadRequest(_localizer["City with the given Id could not be found"]);
 
                 individual.City = city;
+                individual.CityId = city.Id;
             }
 
             _repository.Add(individual);
@@ -93,27 +94,17 @@ namespace IndividualsApi.Controllers
                 
             if(existing == null) return NotFound(_localizer["Individual Could not be found"]);
 
-            var cityId = model.CityId;
-
             _mapper.Map(model, existing);
-
-            if (cityId != 0)
+            
+            if (model.CityId != 0)
             {
                 var city = await _repository.GetCityByIdAsync(model.CityId);
 
                 if (city == null) return BadRequest(_localizer["City with the given Id could not be found"]);
 
-                if(existing.City.Id != cityId)
-                {
-                    existing.City = null;
-
-                    await _repository.SaveChangesAsync();
-
-                    existing.City = city;
-                }
+                existing.CityId = city.Id;
+                existing.City = city;
             }
-
-
 
             if (await _repository.SaveChangesAsync())
             {

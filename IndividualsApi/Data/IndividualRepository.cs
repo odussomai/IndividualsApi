@@ -64,10 +64,14 @@ namespace IndividualsApi.Data
 
         public async Task<Individual[]> Search(string term)
         {
-            var result = _context.Individuals.Include(c => c.City).Where(i => i.FirstName.Contains(term) ||
+            var result = _context.Individuals
+                .Include(c => c.City)
+                .Include(a => a.PhoneNumbers)
+                .Where(i => i.FirstName.Contains(term) ||
                                                          i.LastName.Contains(term) ||
                                                          i.PersonalId.Contains(term) ||
-                                                         (i.City != null &&  i.City.Name.Contains(term)));
+                                                         (i.City != null && i.City.Name.Contains(term)) ||
+                                                         i.PhoneNumbers.Any(p => p.PhoneNumber.Contains(term)));
             return await result.ToArrayAsync();
         }
 

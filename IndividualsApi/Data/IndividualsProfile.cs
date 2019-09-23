@@ -16,7 +16,8 @@ namespace IndividualsApi.Data
                 .ForMember(i => i.Phones, p => p.MapFrom(a => a.PhoneNumbers))
                 .ForMember(m => m.CityId, p => p.MapFrom(a => a.City.Id))
                 .ForMember(m => m.CityName, p => p.MapFrom(a => a.City.Name))
-                .ReverseMap();
+                .ReverseMap()
+                .ForMember(m => m.City, p =>p.Ignore());
 
             CreateMap<Phone, PhoneModel>()
                 .ForMember(m => m.PhoneNumber, s => s.MapFrom(d => d.PhoneNumber))

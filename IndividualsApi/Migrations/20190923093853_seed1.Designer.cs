@@ -4,14 +4,16 @@ using IndividualsApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IndividualsApi.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
-    partial class IndividualsContextModelSnapshot : ModelSnapshot
+    [Migration("20190923093853_seed1")]
+    partial class seed1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -19,43 +21,11 @@ namespace IndividualsApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("IndividualsApi.Data.Entities.City", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Tbilisi"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Kutaisi"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Batumi"
-                        });
-                });
-
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CityId");
 
                     b.Property<DateTime>("DateOfBirth");
 
@@ -77,15 +47,12 @@ namespace IndividualsApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CityId");
-
                     b.ToTable("Individuals");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            CityId = 1,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Aleksandre",
                             Image = "",
@@ -96,7 +63,6 @@ namespace IndividualsApi.Migrations
                         new
                         {
                             Id = 2,
-                            CityId = 2,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Another",
                             Image = "",
@@ -165,9 +131,35 @@ namespace IndividualsApi.Migrations
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
                 {
-                    b.HasOne("IndividualsApi.Data.Entities.City", "City")
-                        .WithMany()
-                        .HasForeignKey("CityId");
+                    b.OwnsOne("IndividualsApi.Data.Entities.City", "City", b1 =>
+                        {
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                            b1.Property<string>("Name");
+
+                            b1.HasKey("Id");
+
+                            b1.ToTable("Individuals");
+
+                            b1.HasOne("IndividualsApi.Data.Entities.Individual")
+                                .WithOne("City")
+                                .HasForeignKey("IndividualsApi.Data.Entities.City", "Id")
+                                .OnDelete(DeleteBehavior.Cascade);
+
+                            b1.HasData(
+                                new
+                                {
+                                    Id = 1,
+                                    Name = "Tbilisi"
+                                },
+                                new
+                                {
+                                    Id = 2,
+                                    Name = "Kutaisi"
+                                });
+                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Phone", b =>

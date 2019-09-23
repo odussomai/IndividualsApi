@@ -9,7 +9,7 @@ namespace IndividualsApi.CustomValidators
 {
     public class MinimumAge : ValidationAttribute
     {
-        private int _minimumAge;
+        private readonly int _minimumAge;
 
         public MinimumAge(int age)
         {

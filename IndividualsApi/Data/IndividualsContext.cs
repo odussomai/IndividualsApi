@@ -13,6 +13,22 @@ namespace IndividualsApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<City>(c => c.HasData(
+                new
+                {
+                    Id = 1,
+                    Name = "Tbilisi"
+                },
+                new
+                {
+                    Id = 2,
+                    Name = "Kutaisi"
+                }, new
+                {
+                    Id = 3,
+                    Name = "Batumi"
+                }));
+
             modelBuilder.Entity<Individual>(i =>
             {
                 i.HasData(new Individual
@@ -24,29 +40,19 @@ namespace IndividualsApi.Data
                     PersonalId = "01024080411",
                     Sex = BinarySex.Male,
                     Image = "",
-                });
-
-                i.OwnsOne(c => c.City).HasData(new City
+                    CityId = 1
+                },
+                new Individual
                 {
-                    Id = 1,
-                    Name = "Tbilisi",
+                    Id = 2,
+                    DateOfBirth = new DateTime(1991, 5, 5),
+                    FirstName = "Another",
+                    LastName = "Person",
+                    PersonalId = "11111111111",
+                    Sex = BinarySex.Female,
+                    Image = "",
+                    CityId = 2
                 });
-
-                //i.OwnsMany(p => p.PhoneNumbers).HasData(
-                //    new
-                //    {
-                //        Id = 1,
-                //        IndividualId = 1,
-                //        PhoneNumber = "598499901"
-                //    },
-                //    new 
-                //    {
-                //        Id = 2,
-                //        IndividualId = 1,
-                //        PhoneNumber = "577676767"
-                //    });
-
-
             });
 
             modelBuilder.Entity<Phone>().HasData(new
