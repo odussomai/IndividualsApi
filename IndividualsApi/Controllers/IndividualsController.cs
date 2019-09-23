@@ -39,6 +39,16 @@ namespace IndividualsApi.Controllers
             return Ok(_mapper.Map<IndividualModel[]>(results));
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult<IndividualModel>> Get(int id)
+        {
+            var result = await _repository.GetIndividualAsync(id);
+
+            if (result == null) return NotFound(_localizer["Individual could not be found"]);
+ 
+            return Ok(_mapper.Map<IndividualModel>(result));
+        }
+
         [HttpGet("/search")]
         public async Task<ActionResult<IndividualModel[]>> Search(string term)
         {
@@ -51,6 +61,16 @@ namespace IndividualsApi.Controllers
         public async Task<ActionResult<IndividualModel>> Post(IndividualModel model)
         {
             var individual = _mapper.Map<Individual>(model);
+
+            if(individual.City != null)
+            {
+                var city = await _repository.GetCityByIdAsync(individual.City.Id);
+
+                if (city == null) return BadRequest(_localizer["City with the given Id could not be found"]);
+
+                individual.City = city;
+            }
+
             _repository.Add(individual);
 
             if (await _repository.SaveChangesAsync())
@@ -73,7 +93,27 @@ namespace IndividualsApi.Controllers
                 
             if(existing == null) return NotFound(_localizer["Individual Could not be found"]);
 
+            var cityId = model.CityId;
+
             _mapper.Map(model, existing);
+
+            if (cityId != 0)
+            {
+                var city = await _repository.GetCityByIdAsync(model.CityId);
+
+                if (city == null) return BadRequest(_localizer["City with the given Id could not be found"]);
+
+                if(existing.City.Id != cityId)
+                {
+                    existing.City = null;
+
+                    await _repository.SaveChangesAsync();
+
+                    existing.City = city;
+                }
+            }
+
+
 
             if (await _repository.SaveChangesAsync())
             {

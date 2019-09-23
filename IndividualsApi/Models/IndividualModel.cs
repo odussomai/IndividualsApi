@@ -1,6 +1,7 @@
 ﻿using IndividualsApi.CustomValidators;
 using IndividualsApi.Data.Entities;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace IndividualsApi.Models
@@ -30,5 +31,7 @@ namespace IndividualsApi.Models
 
         public int CityId { get; set; }
         public string CityName { get; set; }
+
+        public List<PhoneModel> Phones { get; set; }
     }
 }

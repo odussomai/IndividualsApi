@@ -30,7 +30,10 @@ namespace IndividualsApi.Data
 
         public async Task<IEnumerable<Individual>> GetAllIndividualsAsync(int pageIndex, int pageSize)
         {
-            IQueryable<Individual> query = _context.Individuals.Include(i => i.City).Include(a => a.Relatives);
+            IQueryable<Individual> query = _context.Individuals
+                .Include(i => i.City)
+                .Include(a => a.Relatives)
+                .Include(p => p.PhoneNumbers);
 
             return await query.ToPagedListAsync(pageIndex, pageSize);
         }
@@ -38,7 +41,10 @@ namespace IndividualsApi.Data
 
         public async Task<Individual> GetIndividualAsync(int id)
         {
-            IQueryable<Individual> query = _context.Individuals.Include(c => c.City);
+            IQueryable<Individual> query = _context.Individuals
+                .Include(i => i.City)
+                .Include(a => a.Relatives)
+                .Include(p => p.PhoneNumbers);
 
             // Query It
             query = query.Where(c => c.Id == id);
@@ -63,6 +69,16 @@ namespace IndividualsApi.Data
                                                          i.PersonalId.Contains(term) ||
                                                          (i.City != null &&  i.City.Name.Contains(term)));
             return await result.ToArrayAsync();
+        }
+
+        public async Task<City> GetCityByIdAsync(int id)
+        {
+            IQueryable<City> query = _context.Cities;
+
+            // Query It
+            query = query.Where(c => c.Id == id);
+
+            return await query.FirstOrDefaultAsync();
         }
     }
 }

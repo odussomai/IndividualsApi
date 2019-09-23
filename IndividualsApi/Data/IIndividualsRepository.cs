@@ -17,5 +17,6 @@ namespace IndividualsApi.Data
         Task<Individual> GetIndividualAsync(int id);
         Task<IEnumerable<T>> FindPaged<T>(int page, int pageSize) where T : class;
         Task<Individual[]> Search(string term);
+        Task<City>  GetCityByIdAsync(int id);
     }
 }
