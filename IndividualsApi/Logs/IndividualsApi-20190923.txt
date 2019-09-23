@@ -1457,3 +1457,319 @@ ORDER BY [t2].[Id]" (0723d8ff)
 2019-09-23T16:16:44.7399440+04:00 80000017-0005-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 96.4852ms (afa2e885)
 2019-09-23T16:16:44.7423256+04:00 80000017-0005-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
 2019-09-23T16:16:44.7445745+04:00 80000017-0005-fe00-b63f-84710c7967bb [INF] Request finished in 108.3261ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-23T16:55:57.9884701+04:00 8000001b-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T16:55:58.0357136+04:00 8000001b-0000-fd00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T16:55:58.0841396+04:00 8000002d-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T16:55:58.0870030+04:00 8000001b-0000-fd00-b63f-84710c7967bb [INF] Request finished in 103.1974ms 301  (791a596a)
+2019-09-23T16:55:58.1801236+04:00 8000002d-0004-fe00-b63f-84710c7967bb [INF] Request finished in 96.0334ms 200 text/html (791a596a)
+2019-09-23T16:55:58.2133780+04:00 80000019-0005-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger-ui-standalone-preset.js   (ca22a1cb)
+2019-09-23T16:55:58.2193072+04:00 8000002e-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger-ui-bundle.js   (ca22a1cb)
+2019-09-23T16:55:58.2209607+04:00 80000008-0005-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger-ui.css   (ca22a1cb)
+2019-09-23T16:55:58.2740695+04:00 8000002e-0004-fe00-b63f-84710c7967bb [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2019-09-23T16:55:58.2740695+04:00 80000019-0005-fe00-b63f-84710c7967bb [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2019-09-23T16:55:58.2755705+04:00 80000008-0005-ff00-b63f-84710c7967bb [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2019-09-23T16:55:58.2891650+04:00 80000008-0005-ff00-b63f-84710c7967bb [INF] Request finished in 69.7858ms 200 text/css (791a596a)
+2019-09-23T16:55:58.2902131+04:00 80000019-0005-fe00-b63f-84710c7967bb [INF] Request finished in 76.2043ms 200 application/javascript (791a596a)
+2019-09-23T16:55:58.2917889+04:00 8000002e-0004-fe00-b63f-84710c7967bb [INF] Request finished in 69.8091ms 200 application/javascript (791a596a)
+2019-09-23T16:55:59.2666101+04:00 8000002f-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T16:55:59.3609950+04:00 8000002f-0004-fe00-b63f-84710c7967bb [INF] Request finished in 93.9442ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T16:56:15.6087935+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/image multipart/form-data; boundary=---------------------------7e324df800900 59178 (ca22a1cb)
+2019-09-23T16:56:15.6421496+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T16:56:15.6696418+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T16:56:15.8059835+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T16:56:15.8754767+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 64.6475ms. (50a9e262)
+2019-09-23T16:56:15.8840059+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-09-23T16:56:15.8938313+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" in 219.2772ms (afa2e885)
+2019-09-23T16:56:15.8968533+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (99874f2b)
+2019-09-23T16:56:15.8995541+04:00 80000030-0004-fe00-b63f-84710c7967bb [INF] Request finished in 291.1128ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-23T16:59:27.8537975+04:00 80000002-0005-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T16:59:27.8796990+04:00 80000002-0005-fd00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T16:59:27.9264879+04:00 80000032-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T16:59:27.9297330+04:00 80000002-0005-fd00-b63f-84710c7967bb [INF] Request finished in 80.6223ms 301  (791a596a)
+2019-09-23T16:59:28.0199188+04:00 80000032-0004-fe00-b63f-84710c7967bb [INF] Request finished in 92.9585ms 200 text/html (791a596a)
+2019-09-23T16:59:28.2428915+04:00 80000033-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T16:59:28.3421824+04:00 80000033-0004-fe00-b63f-84710c7967bb [INF] Request finished in 99.4741ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T16:59:35.8057711+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/image multipart/form-data; boundary=---------------------------7e331223100adc 59180 (ca22a1cb)
+2019-09-23T16:59:35.8468666+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T16:59:35.8698117+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T16:59:35.9998958+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T16:59:36.0298069+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 24.6416ms. (50a9e262)
+2019-09-23T16:59:36.0414680+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.String"'. (8a1b66c8)
+2019-09-23T16:59:36.0527009+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" in 176.8308ms (afa2e885)
+2019-09-23T16:59:36.0560096+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (99874f2b)
+2019-09-23T16:59:36.0631809+04:00 80000034-0004-fe00-b63f-84710c7967bb [INF] Request finished in 257.3573ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-23T16:59:48.9661206+04:00 80000035-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/da0277c1-2864-4db3-a8ff-6590ac1e57ce.PNG   (ca22a1cb)
+2019-09-23T16:59:48.9739010+04:00 80000035-0004-fe00-b63f-84710c7967bb [INF] Request finished in 14.0373ms 404  (791a596a)
+2019-09-23T16:59:56.2371341+04:00 80000036-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/da0277c1-2864-4db3-a8ff-6590ac1e57ce.PNG   (ca22a1cb)
+2019-09-23T16:59:56.2410062+04:00 80000036-0004-fe00-b63f-84710c7967bb [INF] Request finished in 4.5091ms 404  (791a596a)
+2019-09-23T17:00:00.7080082+04:00 80000037-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/da0277c1-2864-4db3-a8ff-6590ac1e57ce.PNG   (ca22a1cb)
+2019-09-23T17:00:00.7107768+04:00 80000037-0004-fe00-b63f-84710c7967bb [INF] Request finished in 2.685ms 404  (791a596a)
+2019-09-23T17:29:41.8368950+04:00 80000019-0001-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:29:41.8641292+04:00 80000019-0001-ff00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:29:41.9159974+04:00 80000015-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T17:29:41.9196761+04:00 80000019-0001-ff00-b63f-84710c7967bb [INF] Request finished in 86.9344ms 301  (791a596a)
+2019-09-23T17:29:42.0163668+04:00 80000015-0003-fc00-b63f-84710c7967bb [INF] Request finished in 99.9737ms 200 text/html (791a596a)
+2019-09-23T17:29:42.2484975+04:00 80000016-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T17:29:42.3576586+04:00 80000016-0003-fc00-b63f-84710c7967bb [INF] Request finished in 108.3531ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T17:29:53.2212807+04:00 80000017-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/images multipart/form-data; boundary=---------------------------7e3c6352f0ad6 59178 (ca22a1cb)
+2019-09-23T17:29:53.2650402+04:00 80000017-0003-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T17:29:53.2886419+04:00 80000017-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile, Int32)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:29:53.4261259+04:00 80000017-0003-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:30:17.9573281+04:00 80000028-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:30:17.9822908+04:00 80000028-0002-fd00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:30:18.0288604+04:00 8000003b-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T17:30:18.0332717+04:00 80000028-0002-fd00-b63f-84710c7967bb [INF] Request finished in 80.044ms 301  (791a596a)
+2019-09-23T17:30:18.1220028+04:00 8000003b-0004-fe00-b63f-84710c7967bb [INF] Request finished in 92.8148ms 200 text/html (791a596a)
+2019-09-23T17:30:18.3498503+04:00 8000003c-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T17:30:18.4388480+04:00 8000003c-0004-fe00-b63f-84710c7967bb [INF] Request finished in 88.9693ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T17:46:29.5662199+04:00 80000020-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:46:29.5918576+04:00 80000020-0000-fd00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:46:29.6393384+04:00 80000020-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T17:46:29.6434007+04:00 80000020-0000-fd00-b63f-84710c7967bb [INF] Request finished in 81.3998ms 301  (791a596a)
+2019-09-23T17:46:29.7317740+04:00 80000020-0003-fc00-b63f-84710c7967bb [INF] Request finished in 92.6459ms 200 text/html (791a596a)
+2019-09-23T17:46:29.9560580+04:00 80000021-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T17:46:30.0479872+04:00 80000021-0003-fc00-b63f-84710c7967bb [INF] Request finished in 91.7941ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T17:46:44.2318328+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/images multipart/form-data; boundary=---------------------------7e3d12c2f0ad6 59178 (ca22a1cb)
+2019-09-23T17:46:44.2714985+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T17:46:44.2933470+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile, Int32)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:46:44.6051757+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:46:48.9216111+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-23T17:46:49.9373596+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("42"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-23T17:46:50.0264397+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("33"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-23T17:46:50.0601847+04:00 80000022-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("21"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-23T17:47:39.4977613+04:00 80000015-0000-fa00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:47:39.5255356+04:00 80000015-0000-fa00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:47:39.5719452+04:00 80000024-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T17:47:39.5749370+04:00 80000015-0000-fa00-b63f-84710c7967bb [INF] Request finished in 82.686ms 301  (791a596a)
+2019-09-23T17:47:39.6653185+04:00 80000024-0003-fc00-b63f-84710c7967bb [INF] Request finished in 93.5715ms 200 text/html (791a596a)
+2019-09-23T17:47:39.8904861+04:00 80000025-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T17:47:39.9870984+04:00 80000025-0003-fc00-b63f-84710c7967bb [INF] Request finished in 96.3401ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T17:47:46.4894775+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/images multipart/form-data; boundary=---------------------------7e31d52e2f0ad6 59180 (ca22a1cb)
+2019-09-23T17:47:46.5343511+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T17:47:46.5592573+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile, Int32)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:47:46.8780545+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:47:50.2462532+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-23T17:47:50.6019076+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("43"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-23T17:47:50.6853811+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("31"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-23T17:47:50.7190806+04:00 80000026-0003-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("22"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-23T17:48:21.5690509+04:00 80000006-0004-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:48:21.5848064+04:00 80000006-0004-ff00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:48:21.6107041+04:00 80000023-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-23T17:48:21.6107198+04:00 80000006-0004-ff00-b63f-84710c7967bb [INF] Request finished in 45.4279ms 301  (791a596a)
+2019-09-23T17:48:21.6745202+04:00 80000023-0000-fd00-b63f-84710c7967bb [INF] Request finished in 63.8168ms 200 text/html (791a596a)
+2019-09-23T17:48:21.8851000+04:00 80000024-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-23T17:48:21.9788003+04:00 80000024-0000-fd00-b63f-84710c7967bb [INF] Request finished in 93.7334ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-23T17:48:28.6617888+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/images multipart/form-data; boundary=---------------------------7e32841c2f0ad6 59180 (ca22a1cb)
+2019-09-23T17:48:28.6926596+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T17:48:28.7113059+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile, Int32)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:48:28.8157126+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:48:28.9726355+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-23T17:48:29.2074565+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("15"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-23T17:48:29.2557032+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("3"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-23T17:48:29.2648643+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-23T17:48:29.3323191+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Individuals] SET [Image] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-09-23T17:48:29.3478209+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 529.4813ms. (50a9e262)
+2019-09-23T17:48:29.3557853+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2019-09-23T17:48:29.3597387+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" in 646.173ms (afa2e885)
+2019-09-23T17:48:29.3605227+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (99874f2b)
+2019-09-23T17:48:29.3651810+04:00 80000025-0000-fd00-b63f-84710c7967bb [INF] Request finished in 703.6654ms 200  (791a596a)
+2019-09-23T17:48:40.5652815+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-23T17:48:40.5665634+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-23T17:48:40.5704967+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:48:40.8007097+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:48:40.8034721+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-23T17:48:40.8154614+04:00 80000026-0000-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[i].City"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-23T17:48:40.8158694+04:00 80000026-0000-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[i].Relatives"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-23T17:48:40.8158935+04:00 80000026-0000-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[i].PhoneNumbers"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-23T17:48:40.8290468+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [i]" (0723d8ff)
+2019-09-23T17:48:40.8361750+04:00 80000026-0000-fd00-b63f-84710c7967bb [WRN] Query: '"(from Individual i in DbSet<Individual> select [i]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-09-23T17:48:40.8607515+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+ORDER BY [i].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-23T17:48:40.8674184+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("1"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        ORDER BY [i0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-23T17:48:40.8703208+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("2"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        ORDER BY [i1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-23T17:48:40.8986477+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 97.8644ms. (50a9e262)
+2019-09-23T17:48:40.9009830+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-23T17:48:40.9066656+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 336.087ms (afa2e885)
+2019-09-23T17:48:40.9067247+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-23T17:48:40.9072845+04:00 80000026-0000-fd00-b63f-84710c7967bb [INF] Request finished in 341.9852ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-23T17:49:52.6208944+04:00 80000009-0003-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-23T17:49:52.6473679+04:00 80000009-0003-fe00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-23T17:49:52.6894552+04:00 80000009-0003-fe00-b63f-84710c7967bb [INF] Request finished in 72.6255ms 301  (791a596a)
+2019-09-23T17:50:08.7575955+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/images multipart/form-data; boundary=---------------------------7e32cc82f0ad6 59178 (ca22a1cb)
+2019-09-23T17:50:08.8038018+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (500cc934)
+2019-09-23T17:50:08.8289013+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"UploadImage\", controller = \"Images\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadImage(Microsoft.AspNetCore.Http.IFormFile, Int32)" on controller "IndividualsApi.Controllers.ImagesController" ("IndividualsApi"). (122b2fdf)
+2019-09-23T17:50:09.1418802+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-23T17:50:12.5233077+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-23T17:50:12.8910497+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("44"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-23T17:50:12.9712490+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("29"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-23T17:50:13.0035525+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-23T17:50:22.8693085+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("20"ms) [Parameters=["@p1='?' (DbType = Int32), @p0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Individuals] SET [Image] = @p0
+WHERE [Id] = @p1;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-09-23T17:50:35.1560877+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 26009.7338ms. (50a9e262)
+2019-09-23T17:50:35.1667631+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2019-09-23T17:50:35.1731681+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)" in 26340.0131ms (afa2e885)
+2019-09-23T17:50:35.1755388+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.ImagesController.UploadImage (IndividualsApi)"' (99874f2b)
+2019-09-23T17:50:35.1855778+04:00 80000028-0000-fd00-b63f-84710c7967bb [INF] Request finished in 26427.6204ms 200  (791a596a)

@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Globalization;
+using IndividualsApi.Services;
 
 namespace IndividualsApi
 {
@@ -36,6 +37,10 @@ namespace IndividualsApi
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddDataAnnotationsLocalization();
+
+
+            services.AddTransient<IImageHandler, ImageHandler>();
+            services.AddTransient<IImageWriter, ImageWriter>();
 
             services.Configure<RequestLocalizationOptions>(options =>
             {
@@ -101,6 +106,7 @@ namespace IndividualsApi
                 opt.SwaggerEndpoint("/swagger/IndividualsSpec/swagger.json", "Individuals API");
                 opt.RoutePrefix = "";
             });
+            app.UseStaticFiles();
             app.UseMvc();
         }
     }
