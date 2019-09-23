@@ -17,3 +17,22 @@ D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\Individ
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Middleware.ExceptionMiddleware.ka-GE.resources
 D:\WorkSpace\Repos\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.deps.json
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.runtimeconfig.json
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.runtimeconfig.dev.json
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.pdb
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csprojAssemblyReference.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Middleware.ExceptionMiddleware.resources
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Middleware.ExceptionMiddleware.ka-GE.resources
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.GenerateResource.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.CoreCompileInputs.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorAssemblyInfo.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorAssemblyInfo.cs
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.AssemblyInfoInputs.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.AssemblyInfo.cs
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\ka-GE\IndividualsApi.resources.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.RazorTargetAssemblyInfo.cache
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.pdb
