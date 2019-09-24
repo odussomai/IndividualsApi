@@ -1715,3 +1715,1178 @@ ORDER BY [t2].[Id]" (0723d8ff)
 2019-09-24T15:30:39.2561623+04:00 80000051-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 16020.4446ms (afa2e885)
 2019-09-24T15:30:39.2585927+04:00 80000051-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
 2019-09-24T15:30:39.2651156+04:00 80000051-0004-fe00-b63f-84710c7967bb [INF] Request finished in 16098.686ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:33:29.0200157+04:00 80000053-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-24T15:33:29.0436414+04:00 80000053-0004-fe00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-24T15:33:29.0853000+04:00 80000027-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-24T15:33:29.0881287+04:00 80000053-0004-fe00-b63f-84710c7967bb [INF] Request finished in 72.7834ms 301  (791a596a)
+2019-09-24T15:33:29.1770980+04:00 80000027-0003-ff00-b63f-84710c7967bb [INF] Request finished in 91.3605ms 200 text/html (791a596a)
+2019-09-24T15:33:29.4185814+04:00 80000028-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-24T15:33:29.5197623+04:00 80000028-0003-ff00-b63f-84710c7967bb [INF] Request finished in 100.6005ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-24T15:33:32.8668508+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T15:33:32.9029886+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T15:33:32.9249551+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:33:33.4388364+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:33:36.7108727+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:33:36.7587597+04:00 80000029-0003-ff00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].Relatives.Relative"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:33:36.7617945+04:00 80000029-0003-ff00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].City"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:33:36.7641400+04:00 80000029-0003-ff00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].PhoneNumbers"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:33:36.9599926+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("55"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T15:33:36.9839680+04:00 80000029-0003-ff00-b63f-84710c7967bb [WRN] Query: '"(from Individual a in DbSet<Individual> select [a]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-09-24T15:33:37.0925149+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T15:33:37.2096256+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("60"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:33:37.2444193+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("13"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:33:37.3085430+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3865.7701ms. (50a9e262)
+2019-09-24T15:33:37.3177549+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T15:33:37.3294793+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 4401.0533ms (afa2e885)
+2019-09-24T15:33:37.3315123+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T15:33:37.3378342+04:00 80000029-0003-ff00-b63f-84710c7967bb [INF] Request finished in 4471.2512ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:34:02.2376484+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/Relations?type=2&relativeId=2  0 (ca22a1cb)
+2019-09-24T15:34:02.2429693+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (500cc934)
+2019-09-24T15:34:02.2547553+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:34:02.2861959+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:34:02.2985512+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:34:02.3998684+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("48"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:34:02.4555594+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("31"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:34:02.4908008+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("26"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:34:02.5399856+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("36"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:34:02.5599461+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:34:02.5776368+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:34:02.6714033+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("39"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Relations] ([IndividualId], [RelativeId], [Type])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Relations]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-09-24T15:34:02.6901192+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 401.9606ms. (50a9e262)
+2019-09-24T15:34:02.6938373+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Data.Entities.Relation"'. (8a1b66c8)
+2019-09-24T15:34:02.7041716+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" in 447.1256ms (afa2e885)
+2019-09-24T15:34:02.7063534+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T15:34:02.7080006+04:00 8000002a-0003-ff00-b63f-84710c7967bb [INF] Request finished in 470.7855ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:34:22.2119905+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T15:34:22.2134411+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T15:34:22.2148932+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:34:22.2319458+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:34:22.2337862+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:34:22.2547138+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T15:34:22.2664499+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T15:34:22.2776288+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:34:22.2884835+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:34:22.2913763+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 57.5933ms. (50a9e262)
+2019-09-24T15:34:22.2929685+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T15:34:22.2945580+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 78.3034ms (afa2e885)
+2019-09-24T15:34:22.2960281+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T15:34:22.2974641+04:00 8000002b-0003-ff00-b63f-84710c7967bb [INF] Request finished in 86.5125ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:34:49.0633972+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/Relations?type=1&relativeId=2  0 (ca22a1cb)
+2019-09-24T15:34:49.0658200+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (500cc934)
+2019-09-24T15:34:49.0673856+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:34:49.0852325+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:34:49.0868042+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:34:49.1112920+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("22"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:34:49.1301391+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:34:49.1530235+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("21"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:34:49.1858824+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("31"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:34:49.2057036+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:34:49.2313562+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:34:49.2952093+04:00 8000002c-0003-ff00-b63f-84710c7967bb [ERR] Failed executing DbCommand ("30"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Relations] ([IndividualId], [RelativeId], [Type])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Relations]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert duplicate key row in object 'dbo.Relations' with unique index 'IX_Relations_IndividualId_RelativeId_Type'. The duplicate key value is (1, 2, 1).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:b4351591-ca81-4808-8e26-deeb142d64c1
+Error Number:2601,State:1,Class:14
+2019-09-24T15:34:49.3041554+04:00 8000002c-0003-ff00-b63f-84710c7967bb [ERR] An exception occurred in the database while saving changes for context type '"IndividualsApi.Data.IndividualsContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert duplicate key row in object 'dbo.Relations' with unique index 'IX_Relations_IndividualId_RelativeId_Type'. The duplicate key value is (1, 2, 1).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert duplicate key row in object 'dbo.Relations' with unique index 'IX_Relations_IndividualId_RelativeId_Type'. The duplicate key value is (1, 2, 1).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at IndividualsApi.Data.IndividualRepository.SaveChangesAsync() in D:\.NET CORE\IndividualsApi\IndividualsApi\Data\IndividualRepository.cs:line 58
+2019-09-24T15:34:49.4152986+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" in 346.1549ms (afa2e885)
+2019-09-24T15:34:49.4172598+04:00 8000002c-0003-ff00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T15:34:49.5130196+04:00 8000002c-0003-ff00-b63f-84710c7967bb [ERR] Something went wrong: Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert duplicate key row in object 'dbo.Relations' with unique index 'IX_Relations_IndividualId_RelativeId_Type'. The duplicate key value is (1, 2, 1).
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at IndividualsApi.Data.IndividualRepository.SaveChangesAsync() in D:\.NET CORE\IndividualsApi\IndividualsApi\Data\IndividualRepository.cs:line 58
+   at IndividualsApi.Controllers.RelationsController.AddRelative(Int32 id, Int32 type, Int32 relativeId) in D:\.NET CORE\IndividualsApi\IndividualsApi\Controllers\RelationsController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at IndividualsApi.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in D:\.NET CORE\IndividualsApi\IndividualsApi\Middleware\ExceptionMiddleware.cs:line 29 (1ebc7e7f)
+2019-09-24T15:35:26.6044036+04:00 8000002e-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-24T15:35:26.6278208+04:00 8000002e-0003-ff00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-24T15:35:26.6696622+04:00 8000001c-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-24T15:35:26.6807539+04:00 8000002e-0003-ff00-b63f-84710c7967bb [INF] Request finished in 79.5338ms 301  (791a596a)
+2019-09-24T15:35:26.7720334+04:00 8000001c-0000-fe00-b63f-84710c7967bb [INF] Request finished in 102.1529ms 200 text/html (791a596a)
+2019-09-24T15:35:26.9875385+04:00 8000001d-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-24T15:35:27.0828785+04:00 8000001d-0000-fe00-b63f-84710c7967bb [INF] Request finished in 95.3314ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-24T15:36:10.4707045+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=1   (ca22a1cb)
+2019-09-24T15:36:10.5119383+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:10.5332834+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:10.7993200+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:13.7188041+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:14.0356317+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("46"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:14.1201250+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("32"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:14.1578689+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("19"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:14.2411464+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("45"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:36:14.2551668+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3450.9335ms. (50a9e262)
+2019-09-24T15:36:14.2679317+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:36:14.2848662+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 3747.0147ms (afa2e885)
+2019-09-24T15:36:14.2872832+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:14.2940769+04:00 8000001e-0000-fe00-b63f-84710c7967bb [INF] Request finished in 3823.6537ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:36:19.7023083+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=1   (ca22a1cb)
+2019-09-24T15:36:19.7047046+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:19.7062431+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:19.7239846+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:19.7344094+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:19.7696470+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("32"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:19.7894743+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:19.8134250+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:19.8451274+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("29"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:36:19.8466401+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 121.3369ms. (50a9e262)
+2019-09-24T15:36:19.8481604+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:36:19.8500169+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 142.2092ms (afa2e885)
+2019-09-24T15:36:19.8513841+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:19.8527469+04:00 8000001f-0000-fe00-b63f-84710c7967bb [INF] Request finished in 151.0343ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:36:23.3564663+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=2   (ca22a1cb)
+2019-09-24T15:36:23.3581080+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:23.3596155+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:23.3763724+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:23.3786819+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:23.4035894+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:23.4221001+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:23.4405515+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:23.4721092+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("29"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:36:23.4736138+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 95.82ms. (50a9e262)
+2019-09-24T15:36:23.4755193+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:36:23.4773706+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 116.176ms (afa2e885)
+2019-09-24T15:36:23.4790317+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:23.4804882+04:00 80000020-0000-fe00-b63f-84710c7967bb [INF] Request finished in 124.5008ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:36:35.8945360+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/Relations?type=1&relativeId=3  0 (ca22a1cb)
+2019-09-24T15:36:35.8964119+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:35.9021828+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:35.9196121+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:35.9228172+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:35.9504346+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("25"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:35.9697157+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:35.9886227+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:36.0206110+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("30"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:36.0389094+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:36.0564474+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:36.1568669+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("38"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Relations] ([IndividualId], [RelativeId], [Type])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Relations]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-09-24T15:36:36.1736062+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 251.5969ms. (50a9e262)
+2019-09-24T15:36:36.1750758+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Data.Entities.Relation"'. (8a1b66c8)
+2019-09-24T15:36:36.1855889+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" in 281.7177ms (afa2e885)
+2019-09-24T15:36:36.1873341+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:36.1887334+04:00 80000021-0000-fe00-b63f-84710c7967bb [INF] Request finished in 295.1038ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:36:42.2873091+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=2   (ca22a1cb)
+2019-09-24T15:36:42.2888736+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:42.2904460+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:42.3081189+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:42.3103161+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:42.3391001+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("26"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:42.3628279+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("20"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:42.3834977+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:42.4139424+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("28"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:36:42.4156626+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 106.0046ms. (50a9e262)
+2019-09-24T15:36:42.4173043+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:36:42.4188669+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 127.0925ms (afa2e885)
+2019-09-24T15:36:42.4201185+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:42.4214163+04:00 80000022-0000-fe00-b63f-84710c7967bb [INF] Request finished in 135.1959ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:36:44.5897804+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=1   (ca22a1cb)
+2019-09-24T15:36:44.5914564+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:36:44.5931591+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:36:44.6101139+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:36:44.6125215+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:36:44.6384378+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("23"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:36:44.6579166+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:36:44.6762619+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:36:44.7060969+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("28"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:36:44.7074968+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 96.1049ms. (50a9e262)
+2019-09-24T15:36:44.7087783+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:36:44.7104941+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 115.7935ms (afa2e885)
+2019-09-24T15:36:44.7125380+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:36:44.7141233+04:00 80000023-0000-fe00-b63f-84710c7967bb [INF] Request finished in 125.0802ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:37:44.8216107+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 POST http://localhost:6600/api/individuals/1/Relations?type=0&relativeId=3  0 (ca22a1cb)
+2019-09-24T15:37:44.8234439+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (500cc934)
+2019-09-24T15:37:44.8249879+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"AddRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:37:44.8417495+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:37:44.8435412+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:37:44.8743224+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("28"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:37:44.9019826+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:37:44.9208815+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:37:44.9532742+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("30"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:37:44.9724037+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:37:44.9916581+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:37:45.0225762+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("28"ms) [Parameters=["@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Relations] ([IndividualId], [RelativeId], [Type])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [Relations]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();" (0723d8ff)
+2019-09-24T15:37:45.0258025+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 182.6233ms. (50a9e262)
+2019-09-24T15:37:45.0272006+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Data.Entities.Relation"'. (8a1b66c8)
+2019-09-24T15:37:45.0289360+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)" in 202.4884ms (afa2e885)
+2019-09-24T15:37:45.0308170+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.AddRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T15:37:45.0323993+04:00 80000035-0001-fc00-b63f-84710c7967bb [INF] Request finished in 211.2588ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:37:59.5704651+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/individuals/1/Relations/count?type=0   (ca22a1cb)
+2019-09-24T15:37:59.5722993+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (500cc934)
+2019-09-24T15:37:59.5737908+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"GetRlationsCountByType\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRlationsCountByType(Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:37:59.5922631+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:37:59.5942877+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:37:59.6203859+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("24"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [i].[Id], [i].[CityId], [i].[DateOfBirth], [i].[FirstName], [i].[Image], [i].[LastName], [i].[PersonalId], [i].[Sex], [i.City].[Id], [i.City].[Name]
+FROM [Individuals] AS [i]
+LEFT JOIN [Cities] AS [i.City] ON [i].[CityId] = [i.City].[Id]
+WHERE [i].[Id] = @__id_0
+ORDER BY [i].[Id]" (0723d8ff)
+2019-09-24T15:37:59.6391033+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.Relatives].[Id], [i.Relatives].[IndividualId], [i.Relatives].[RelativeId], [i.Relatives].[Type]
+FROM [Relations] AS [i.Relatives]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT TOP(1) [i0].[Id]
+        FROM [Individuals] AS [i0]
+        LEFT JOIN [Cities] AS [i.City0] ON [i0].[CityId] = [i.City0].[Id]
+        WHERE [i0].[Id] = @__id_0
+        ORDER BY [i0].[Id]
+    ) AS [t]
+) AS [t0] ON [i.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:37:59.6580263+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("17"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [i.PhoneNumbers].[Id], [i.PhoneNumbers].[IndividualId], [i.PhoneNumbers].[PhoneNumber], [i.PhoneNumbers].[Type]
+FROM [Phones] AS [i.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT TOP(1) [i1].[Id]
+        FROM [Individuals] AS [i1]
+        LEFT JOIN [Cities] AS [i.City1] ON [i1].[CityId] = [i.City1].[Id]
+        WHERE [i1].[Id] = @__id_0
+        ORDER BY [i1].[Id]
+    ) AS [t1]
+) AS [t2] ON [i.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:37:59.6887529+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("29"ms) [Parameters=["@__id_0='?' (DbType = Int32), @__type_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Relations] AS [r]
+WHERE ([r].[IndividualId] = @__id_0) AND ([r].[Type] = @__type_1)" (0723d8ff)
+2019-09-24T15:37:59.6902937+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 96.6373ms. (50a9e262)
+2019-09-24T15:37:59.6916137+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"System.Int32"'. (8a1b66c8)
+2019-09-24T15:37:59.6933513+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)" in 117.9932ms (afa2e885)
+2019-09-24T15:37:59.6946113+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.GetRlationsCountByType (IndividualsApi)"' (99874f2b)
+2019-09-24T15:37:59.6962246+04:00 80000036-0001-fc00-b63f-84710c7967bb [INF] Request finished in 126.5513ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:38:04.8047933+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T15:38:04.8072323+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T15:38:04.8128594+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:38:05.0652311+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:38:05.0706807+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:38:05.0837056+04:00 80000037-0001-fc00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].Relatives.Relative"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:38:05.0856547+04:00 80000037-0001-fc00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].City"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:38:05.0869778+04:00 80000037-0001-fc00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].PhoneNumbers"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:38:05.1254094+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T15:38:05.1334577+04:00 80000037-0001-fc00-b63f-84710c7967bb [WRN] Query: '"(from Individual a in DbSet<Individual> select [a]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-09-24T15:38:05.1737025+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("13"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T15:38:05.1923702+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:38:05.2089531+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:38:05.2623377+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 195.1286ms. (50a9e262)
+2019-09-24T15:38:05.2646139+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T15:38:05.2697747+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 455.1615ms (afa2e885)
+2019-09-24T15:38:05.2713020+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T15:38:05.2728066+04:00 80000037-0001-fc00-b63f-84710c7967bb [INF] Request finished in 468.0782ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:49:07.5724815+04:00 80000025-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-24T15:49:07.5973191+04:00 80000025-0000-fe00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-24T15:49:07.6691543+04:00 80000046-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-24T15:49:07.6691543+04:00 80000025-0000-fe00-b63f-84710c7967bb [INF] Request finished in 89.7194ms 301  (791a596a)
+2019-09-24T15:49:07.8088726+04:00 80000046-0002-fd00-b63f-84710c7967bb [INF] Request finished in 143.0235ms 200 text/html (791a596a)
+2019-09-24T15:49:08.0322658+04:00 80000047-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-24T15:49:08.1295339+04:00 80000047-0002-fd00-b63f-84710c7967bb [INF] Request finished in 96.9228ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-24T15:49:15.0788459+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T15:49:15.1124746+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T15:49:15.1346951+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:49:15.6356025+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:49:15.8228001+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:49:15.8585359+04:00 80000048-0002-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].Relatives.Relative"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:49:15.8609387+04:00 80000048-0002-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].City"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:49:15.8623726+04:00 80000048-0002-fd00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].PhoneNumbers"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T15:49:16.0397729+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("41"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T15:49:16.0609157+04:00 80000048-0002-fd00-b63f-84710c7967bb [WRN] Query: '"(from Individual a in DbSet<Individual> select [a]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-09-24T15:49:16.1566212+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("14"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T15:49:16.1970671+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("14"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:49:16.2270393+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:49:16.2919597+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 651.3846ms. (50a9e262)
+2019-09-24T15:49:16.3018171+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T15:49:16.3143563+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 1175.2361ms (afa2e885)
+2019-09-24T15:49:16.3164922+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T15:49:16.3230158+04:00 80000048-0002-fd00-b63f-84710c7967bb [INF] Request finished in 1244.0625ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T15:57:08.7650816+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T15:57:08.7668991+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T15:57:08.7684814+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T15:57:08.8235219+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T15:57:08.8531066+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T15:57:08.9156213+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T15:57:08.9291571+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("10"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T15:57:08.9440901+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T15:57:08.9579140+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("11"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T15:57:08.9597873+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 134.8009ms. (50a9e262)
+2019-09-24T15:57:08.9614998+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T15:57:08.9638027+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 193.5375ms (afa2e885)
+2019-09-24T15:57:08.9653314+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T15:57:08.9667802+04:00 80000027-0000-fe00-b63f-84710c7967bb [INF] Request finished in 202.5099ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T16:02:29.8978975+04:00 80000030-0003-ff00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/   (ca22a1cb)
+2019-09-24T16:02:29.9247981+04:00 80000030-0003-ff00-b63f-84710c7967bb [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2019-09-24T16:02:29.9682429+04:00 80000055-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/index.html   (ca22a1cb)
+2019-09-24T16:02:29.9709448+04:00 80000030-0003-ff00-b63f-84710c7967bb [INF] Request finished in 77.5412ms 301  (791a596a)
+2019-09-24T16:02:30.0597028+04:00 80000055-0004-fe00-b63f-84710c7967bb [INF] Request finished in 91.4454ms 200 text/html (791a596a)
+2019-09-24T16:02:30.2749571+04:00 80000056-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/swagger/IndividualsSpec/swagger.json   (ca22a1cb)
+2019-09-24T16:02:30.3691767+04:00 80000056-0004-fe00-b63f-84710c7967bb [INF] Request finished in 94.8806ms 200 application/json;charset=utf-8 (791a596a)
+2019-09-24T16:03:16.4324668+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T16:03:16.4690182+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T16:03:16.4901954+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T16:03:16.9813718+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T16:03:17.1670287+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T16:03:17.2040880+04:00 80000057-0004-fe00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].Relatives.Relative"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T16:03:17.2059034+04:00 80000057-0004-fe00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].City"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T16:03:17.2072581+04:00 80000057-0004-fe00-b63f-84710c7967bb [WRN] The Include operation for navigation '"[a].PhoneNumbers"' is unnecessary and was ignored because the navigation is not reachable in the final query results. See https://go.microsoft.com/fwlink/?linkid=850303 for more information. (10efaee6)
+2019-09-24T16:03:17.3846694+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("42"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T16:03:17.4042577+04:00 80000057-0004-fe00-b63f-84710c7967bb [WRN] Query: '"(from Individual a in DbSet<Individual> select [a]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-09-24T16:03:17.5008543+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("16"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T16:03:17.5443760+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("14"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T16:03:17.5736813+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("12"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T16:03:17.6366231+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 650.2873ms. (50a9e262)
+2019-09-24T16:03:17.6467063+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T16:03:17.6624174+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 1166.3151ms (afa2e885)
+2019-09-24T16:03:17.6653293+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T16:03:17.6721242+04:00 80000057-0004-fe00-b63f-84710c7967bb [INF] Request finished in 1240.3227ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T16:03:37.2755559+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 DELETE http://localhost:6600/api/individuals/1/Relations/relativeId:int?relativeId=2&relationType=1  0 (ca22a1cb)
+2019-09-24T16:03:37.2810183+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)"' (500cc934)
+2019-09-24T16:03:37.2933357+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"DeleteRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T16:03:37.3284810+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T16:03:37.3409476+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T16:03:37.3449714+04:00 80000058-0004-fe00-b63f-84710c7967bb [WRN] Query: '"(from Relation <generated>_1 in DbSet<Relation> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results. (6af4db4b)
+2019-09-24T16:03:37.4148879+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[IndividualId], [r].[RelativeId], [r].[Type]
+FROM [Relations] AS [r]" (0723d8ff)
+2019-09-24T16:03:37.4991699+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("32"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Relations]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-09-24T16:03:37.5108000+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 180.642ms. (50a9e262)
+2019-09-24T16:03:37.5175194+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2019-09-24T16:03:37.5194916+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)" in 224.3906ms (afa2e885)
+2019-09-24T16:03:37.5209860+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T16:03:37.5229975+04:00 80000058-0004-fe00-b63f-84710c7967bb [INF] Request finished in 248.142ms 200  (791a596a)
+2019-09-24T16:04:04.4549747+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T16:04:04.4567619+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T16:04:04.4583384+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T16:04:04.4866274+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T16:04:04.4939179+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T16:04:04.5157526+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T16:04:04.5275664+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("8"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T16:04:04.5386576+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T16:04:04.5501458+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T16:04:04.5518525+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 63.9178ms. (50a9e262)
+2019-09-24T16:04:04.5534198+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T16:04:04.5553212+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 95.401ms (afa2e885)
+2019-09-24T16:04:04.5566067+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T16:04:04.5579232+04:00 80000059-0004-fe00-b63f-84710c7967bb [INF] Request finished in 103.6554ms 200 application/json; charset=utf-8 (791a596a)
+2019-09-24T16:05:35.3359676+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 DELETE http://localhost:6600/api/individuals/1/Relations/relativeId:int?relativeId=2&relationType=2  0 (ca22a1cb)
+2019-09-24T16:05:35.3393141+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)"' (500cc934)
+2019-09-24T16:05:35.3408826+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"DeleteRelative\", controller = \"Relations\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteRelative(Int32, Int32, Int32)" on controller "IndividualsApi.Controllers.RelationsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T16:05:35.3604479+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T16:05:35.3621542+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T16:05:35.3959308+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("25"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[IndividualId], [r].[RelativeId], [r].[Type]
+FROM [Relations] AS [r]" (0723d8ff)
+2019-09-24T16:05:35.4612864+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("38"ms) [Parameters=["@p0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Relations]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-09-24T16:05:35.4647121+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 102.1898ms. (50a9e262)
+2019-09-24T16:05:35.4663327+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2019-09-24T16:05:35.4678396+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)" in 125.5102ms (afa2e885)
+2019-09-24T16:05:35.4692698+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.RelationsController.DeleteRelative (IndividualsApi)"' (99874f2b)
+2019-09-24T16:05:35.4718929+04:00 8000001b-0002-fb00-b63f-84710c7967bb [INF] Request finished in 135.88ms 200  (791a596a)
+2019-09-24T16:05:39.1033311+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Request starting HTTP/1.1 GET http://localhost:6600/api/Individuals?pageIndex=1&pageSize=25   (ca22a1cb)
+2019-09-24T16:05:39.1057033+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executing endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (500cc934)
+2019-09-24T16:05:39.1078851+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Route matched with "{action = \"Get\", controller = \"Individuals\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[IndividualsApi.Models.IndividualModel[]]] Get(Int32, Int32)" on controller "IndividualsApi.Controllers.IndividualsController" ("IndividualsApi"). (122b2fdf)
+2019-09-24T16:05:39.1258083+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executing action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" - Validation state: Valid (dad538d7)
+2019-09-24T16:05:39.1278115+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Entity Framework Core "2.2.4-servicing-10062" initialized '"IndividualsContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-09-24T16:05:39.1489219+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Individuals] AS [a]" (0723d8ff)
+2019-09-24T16:05:39.1617317+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[CityId], [a].[DateOfBirth], [a].[FirstName], [a].[Image], [a].[LastName], [a].[PersonalId], [a].[Sex], [a.City].[Id], [a.City].[Name]
+FROM [Individuals] AS [a]
+LEFT JOIN [Cities] AS [a.City] ON [a].[CityId] = [a.City].[Id]
+ORDER BY [a].[Id]
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-09-24T16:05:39.1730905+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.Relatives].[Id], [a.Relatives].[IndividualId], [a.Relatives].[RelativeId], [a.Relatives].[Type], [r.Relative].[Id], [r.Relative].[CityId], [r.Relative].[DateOfBirth], [r.Relative].[FirstName], [r.Relative].[Image], [r.Relative].[LastName], [r.Relative].[PersonalId], [r.Relative].[Sex]
+FROM [Relations] AS [a.Relatives]
+INNER JOIN [Individuals] AS [r.Relative] ON [a.Relatives].[RelativeId] = [r.Relative].[Id]
+INNER JOIN (
+    SELECT DISTINCT [t].*
+    FROM (
+        SELECT [a0].[Id]
+        FROM [Individuals] AS [a0]
+        LEFT JOIN [Cities] AS [a.City0] ON [a0].[CityId] = [a.City0].[Id]
+        ORDER BY [a0].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t]
+) AS [t0] ON [a.Relatives].[IndividualId] = [t0].[Id]
+ORDER BY [t0].[Id]" (0723d8ff)
+2019-09-24T16:05:39.1839252+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("9"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a.PhoneNumbers].[Id], [a.PhoneNumbers].[IndividualId], [a.PhoneNumbers].[PhoneNumber], [a.PhoneNumbers].[Type]
+FROM [Phones] AS [a.PhoneNumbers]
+INNER JOIN (
+    SELECT DISTINCT [t1].*
+    FROM (
+        SELECT [a1].[Id]
+        FROM [Individuals] AS [a1]
+        LEFT JOIN [Cities] AS [a.City1] ON [a1].[CityId] = [a.City1].[Id]
+        ORDER BY [a1].[Id]
+        OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+    ) AS [t1]
+) AS [t2] ON [a.PhoneNumbers].[IndividualId] = [t2].[Id]
+ORDER BY [t2].[Id]" (0723d8ff)
+2019-09-24T16:05:39.1864874+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed action method "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 58.5582ms. (50a9e262)
+2019-09-24T16:05:39.1880687+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executing ObjectResult, writing value of type '"IndividualsApi.Models.IndividualModel[]"'. (8a1b66c8)
+2019-09-24T16:05:39.1898734+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed action "IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)" in 80.4134ms (afa2e885)
+2019-09-24T16:05:39.1911990+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Executed endpoint '"IndividualsApi.Controllers.IndividualsController.Get (IndividualsApi)"' (99874f2b)
+2019-09-24T16:05:39.1925683+04:00 8000001c-0002-fb00-b63f-84710c7967bb [INF] Request finished in 89.8048ms 200 application/json; charset=utf-8 (791a596a)

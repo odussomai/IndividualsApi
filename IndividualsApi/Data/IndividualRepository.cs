@@ -93,5 +93,16 @@ namespace IndividualsApi.Data
 
             //return await query.CountAsync();
         }
+
+        public async Task<Relation> GetRelationByRelativeId(int id, int relativeId, int relType)
+        {
+            IQueryable<Relation> query = _context.Relations;
+
+            var type = (RelationType) relType;
+
+            query.Where(r => r.IndividualId == id && r.RelativeId == relativeId && r.Type == type);
+
+            return await query.FirstOrDefaultAsync();
+        }
     }
 }

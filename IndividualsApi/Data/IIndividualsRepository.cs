@@ -19,5 +19,6 @@ namespace IndividualsApi.Data
         Task<Individual[]> Search(string term);
         Task<City>  GetCityByIdAsync(int id);
         Task<int> GetRelationCountAsync(int id, RelationType type);
+        Task<Relation> GetRelationByRelativeId(int id, int relativeId, int relType);
     }
 }

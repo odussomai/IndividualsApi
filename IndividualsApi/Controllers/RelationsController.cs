@@ -19,7 +19,7 @@ namespace IndividualsApi.Controllers
             _repository = repository;
         }
 
-        [HttpGet("count")]
+        [HttpGet("report")]
         public async Task<IActionResult> GetRlationsCountByType(int id, int type)
         {
             if (await _repository.GetIndividualAsync(id) == null) return NotFound("Individual Could not be found");
@@ -42,12 +42,29 @@ namespace IndividualsApi.Controllers
                 RelativeId = relativeId,
             };
 
+            //if we want our database to reflect also the reverse relationship, we should construct another relation object
+            //depending on business requirements
             _repository.Add(relation);
 
             if (await _repository.SaveChangesAsync())
             {
                 return Ok(relation);
             }
+
+            return BadRequest();
+        }
+
+
+        [HttpDelete("relativeId:int")]
+        public async Task<IActionResult> DeleteRelative(int id, int relativeId, int relationType)
+        {
+            var relation = await _repository.GetRelationByRelativeId(id, relativeId, relationType);
+
+            if (relation == null) return NotFound("Such a relation does not exist");
+
+            _repository.Delete(relation);
+
+            if (await _repository.SaveChangesAsync()) return Ok();
 
             return BadRequest();
         }
