@@ -32,7 +32,7 @@ namespace IndividualsApi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IndividualModel[]>> Get(int pageIndex, int pageSize)
+        public async Task<ActionResult<IndividualModel[]>> Get(int pageIndex = 1, int pageSize = 25)
         {
             var results = await _repository.GetAllIndividualsAsync(pageIndex, pageSize);
 
@@ -49,7 +49,7 @@ namespace IndividualsApi.Controllers
             return Ok(_mapper.Map<IndividualModel>(result));
         }
 
-        [HttpGet("/search")]
+        [HttpGet("search")]
         public async Task<ActionResult<IndividualModel[]>> Search(string term)
         {
             var results = await _repository.Search(term);

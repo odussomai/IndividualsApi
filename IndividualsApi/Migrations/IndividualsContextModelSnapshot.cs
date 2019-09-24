@@ -103,6 +103,17 @@ namespace IndividualsApi.Migrations
                             LastName = "Person",
                             PersonalId = "11111111111",
                             Sex = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 3,
+                            DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Still",
+                            Image = "",
+                            LastName = "Another",
+                            PersonalId = "11111111111",
+                            Sex = 0
                         });
                 });
 
@@ -148,7 +159,7 @@ namespace IndividualsApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("IndividualId");
+                    b.Property<int>("IndividualId");
 
                     b.Property<int>("RelativeId");
 
@@ -156,11 +167,21 @@ namespace IndividualsApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IndividualId");
-
                     b.HasIndex("RelativeId");
 
+                    b.HasIndex("IndividualId", "RelativeId", "Type")
+                        .IsUnique();
+
                     b.ToTable("Relations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IndividualId = 1,
+                            RelativeId = 2,
+                            Type = 1
+                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>

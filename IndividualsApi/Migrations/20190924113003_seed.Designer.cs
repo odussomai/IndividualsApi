@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IndividualsApi.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
-    [Migration("20190923085920_seed")]
+    [Migration("20190924113003_seed")]
     partial class seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,11 +21,43 @@ namespace IndividualsApi.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("IndividualsApi.Data.Entities.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Tbilisi"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Kutaisi"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Batumi"
+                        });
+                });
+
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CityId");
 
                     b.Property<DateTime>("DateOfBirth");
 
@@ -47,17 +79,42 @@ namespace IndividualsApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CityId");
+
                     b.ToTable("Individuals");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CityId = 1,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Aleksandre",
                             Image = "",
                             LastName = "Tsereteli",
                             PersonalId = "01024080411",
+                            Sex = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CityId = 2,
+                            DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Another",
+                            Image = "",
+                            LastName = "Person",
+                            PersonalId = "11111111111",
+                            Sex = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 3,
+                            DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Still",
+                            Image = "",
+                            LastName = "Another",
+                            PersonalId = "11111111111",
                             Sex = 0
                         });
                 });
@@ -104,7 +161,7 @@ namespace IndividualsApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("IndividualId");
+                    b.Property<int>("IndividualId");
 
                     b.Property<int>("RelativeId");
 
@@ -112,39 +169,28 @@ namespace IndividualsApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IndividualId");
-
                     b.HasIndex("RelativeId");
 
+                    b.HasIndex("IndividualId", "RelativeId", "Type")
+                        .IsUnique();
+
                     b.ToTable("Relations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IndividualId = 1,
+                            RelativeId = 2,
+                            Type = 1
+                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
                 {
-                    b.OwnsOne("IndividualsApi.Data.Entities.City", "City", b1 =>
-                        {
-                            b1.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                            b1.Property<string>("Name");
-
-                            b1.HasKey("Id");
-
-                            b1.ToTable("Individuals");
-
-                            b1.HasOne("IndividualsApi.Data.Entities.Individual")
-                                .WithOne("City")
-                                .HasForeignKey("IndividualsApi.Data.Entities.City", "Id")
-                                .OnDelete(DeleteBehavior.Cascade);
-
-                            b1.HasData(
-                                new
-                                {
-                                    Id = 1,
-                                    Name = "Tbilisi"
-                                });
-                        });
+                    b.HasOne("IndividualsApi.Data.Entities.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId");
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Phone", b =>

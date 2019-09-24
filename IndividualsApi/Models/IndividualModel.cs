@@ -33,5 +33,7 @@ namespace IndividualsApi.Models
         public string CityName { get; set; }
 
         public List<PhoneModel> Phones { get; set; }
+
+        public List<RelationModel> Relations { get; set; }
     }
 }

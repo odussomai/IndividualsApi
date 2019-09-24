@@ -13,6 +13,13 @@ namespace IndividualsApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Relation>()
+                .HasOne(a => a.individual)
+                .WithMany(a => a.Relatives)
+                .OnDelete(DeleteBehavior.ClientSetNull);
+
+            modelBuilder.Entity<Relation>().HasIndex(p => new {p.IndividualId, p.RelativeId, p.Type}).IsUnique();
+
             modelBuilder.Entity<City>(c => c.HasData(
                 new
                 {
@@ -52,6 +59,17 @@ namespace IndividualsApi.Data
                     Sex = BinarySex.Female,
                     Image = "",
                     CityId = 2
+                },
+                new Individual
+                {
+                    Id = 3,
+                    DateOfBirth = new DateTime(1991, 5, 5),
+                    FirstName = "Still",
+                    LastName = "Another",
+                    PersonalId = "11111111111",
+                    Sex = BinarySex.Male,
+                    Image = "",
+                    CityId = 3
                 });
             });
 
@@ -69,6 +87,32 @@ namespace IndividualsApi.Data
                 PhoneNumber = "577676767",
                 Type = PhoneType.Home,
             });
+
+            modelBuilder.Entity<Relation>(i =>
+            {
+                i.HasData(new Relation
+                {
+                    Id = 1,
+                    IndividualId = 1,
+                    RelativeId = 2,
+                    Type = RelationType.Acquaintance,
+                });
+            });
+            //    new Relation
+            //    {
+            //        IndividualId = 2,
+            //        RelativeId = 3,
+            //        Type = RelationType.Colleague,
+            //    },
+            //    new Relation
+            //    {
+            //        IndividualId = 2,
+            //        RelativeId = 3,
+            //        Type = RelationType.BloodRelative,
+            //    });
+            //});
+
+
         }
 
         public DbSet<Individual> Individuals { get; set; }

@@ -13,6 +13,8 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Globalization;
 using IndividualsApi.Services;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace IndividualsApi
 {
@@ -36,7 +38,10 @@ namespace IndividualsApi
             services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddDataAnnotationsLocalization();
+                .AddDataAnnotationsLocalization()
+                .AddJsonOptions(options => {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                }); ;
 
 
             services.AddTransient<IImageHandler, ImageHandler>();
@@ -53,11 +58,7 @@ namespace IndividualsApi
                 options.DefaultRequestCulture = new RequestCulture("en-US");
                 options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
-                options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context =>
-                {
-                    // My custom request culture logic
-                    return new ProviderCultureResult("ka-GE");
-                }));
+                options.RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(async context => new ProviderCultureResult("ka-GE")));
             });
 
             services.AddSwaggerGen(setup =>

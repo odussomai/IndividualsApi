@@ -18,5 +18,6 @@ namespace IndividualsApi.Data
         Task<IEnumerable<T>> FindPaged<T>(int page, int pageSize) where T : class;
         Task<Individual[]> Search(string term);
         Task<City>  GetCityByIdAsync(int id);
+        Task<int> GetRelationCountAsync(int id, RelationType type);
     }
 }

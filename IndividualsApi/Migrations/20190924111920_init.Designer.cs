@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IndividualsApi.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
-    [Migration("20190923114139_seed 2")]
-    partial class seed2
+    [Migration("20190924111920_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,23 @@ namespace IndividualsApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Tbilisi"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Kutaisi"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Batumi"
+                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
@@ -70,6 +87,7 @@ namespace IndividualsApi.Migrations
                         new
                         {
                             Id = 1,
+                            CityId = 1,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Aleksandre",
                             Image = "",
@@ -80,12 +98,24 @@ namespace IndividualsApi.Migrations
                         new
                         {
                             Id = 2,
+                            CityId = 2,
                             DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FirstName = "Another",
                             Image = "",
                             LastName = "Person",
                             PersonalId = "11111111111",
                             Sex = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CityId = 3,
+                            DateOfBirth = new DateTime(1991, 5, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Still",
+                            Image = "",
+                            LastName = "Another",
+                            PersonalId = "11111111111",
+                            Sex = 0
                         });
                 });
 
@@ -131,7 +161,7 @@ namespace IndividualsApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("IndividualId");
+                    b.Property<int>("IndividualId");
 
                     b.Property<int>("RelativeId");
 
@@ -139,11 +169,21 @@ namespace IndividualsApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IndividualId");
-
                     b.HasIndex("RelativeId");
 
+                    b.HasIndex("IndividualId", "RelativeId", "Type")
+                        .IsUnique();
+
                     b.ToTable("Relations");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IndividualId = 1,
+                            RelativeId = 2,
+                            Type = 1
+                        });
                 });
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Individual", b =>
@@ -164,13 +204,13 @@ namespace IndividualsApi.Migrations
             modelBuilder.Entity("IndividualsApi.Data.Entities.Relation", b =>
                 {
                     b.HasOne("IndividualsApi.Data.Entities.Individual", "individual")
-                        .WithMany("Relatives")
-                        .HasForeignKey("IndividualId");
+                        .WithMany()
+                        .HasForeignKey("IndividualId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("IndividualsApi.Data.Entities.Individual", "Relative")
-                        .WithMany()
-                        .HasForeignKey("RelativeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithMany("Relatives")
+                        .HasForeignKey("RelativeId");
                 });
 #pragma warning restore 612, 618
         }

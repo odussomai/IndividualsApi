@@ -8,6 +8,7 @@ namespace IndividualsApi.Data.Entities
     [Table("Individuals")]
     public class Individual
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
