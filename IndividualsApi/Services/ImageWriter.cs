@@ -23,6 +23,11 @@ namespace IndividualsApi.Services
             return DeleteFile(location);
         }
 
+        public string GetImage(string location)
+        {
+            return GetFile(location);
+        }
+
         /// <summary>
         /// Method to check if file is image file
         /// </summary>
@@ -48,12 +53,12 @@ namespace IndividualsApi.Services
         public async Task<string> WriteFile(IFormFile file)
         {
             string path;
-            
+
             try
             {
                 var extension = "." + file.FileName.Split('.')[file.FileName.Split('.').Length - 1];
                 var fileName = Guid.NewGuid().ToString() + extension; //Create a new Name 
-                                                                  //for the file due to security reasons.
+                                                                      //for the file due to security reasons.
 
                 path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", fileName);
 
@@ -79,6 +84,11 @@ namespace IndividualsApi.Services
             }
 
             return false;
+        }
+
+        public string GetFile(string location)
+        {
+            return Convert.ToBase64String(File.ReadAllBytes(location));
         }
 
     }

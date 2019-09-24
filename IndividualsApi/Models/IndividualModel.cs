@@ -31,6 +31,7 @@ namespace IndividualsApi.Models
 
         public int CityId { get; set; }
         public string CityName { get; set; }
+        public string Image { get; set; } 
 
         public List<PhoneModel> Phones { get; set; }
 

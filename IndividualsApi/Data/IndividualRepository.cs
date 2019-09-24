@@ -44,7 +44,7 @@ namespace IndividualsApi.Data
         {
             IQueryable<Individual> query = _context.Individuals
                 .Include(i => i.City)
-                .Include(a => a.Relatives)
+                .Include(a => a.Relatives).ThenInclude(c => c.Relative)
                 .Include(p => p.PhoneNumbers);
 
             // Query It

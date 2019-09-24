@@ -4,6 +4,7 @@ using IndividualsApi.Data;
 using IndividualsApi.Data.Entities;
 using IndividualsApi.Filters;
 using IndividualsApi.Models;
+using IndividualsApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Localization;
@@ -19,16 +20,19 @@ namespace IndividualsApi.Controllers
         private readonly IMapper _mapper;
         private readonly LinkGenerator _linkGenerator;
         private readonly IStringLocalizer<IndividualsController> _localizer;
+        private readonly IImageWriter _imageWriter;
 
         public IndividualsController(IIndividualsRepository repository,
                                      IMapper mapper,
                                      LinkGenerator linkGenerator,
-                                     IStringLocalizer<IndividualsController> localizer)
+                                     IStringLocalizer<IndividualsController> localizer,
+                                     IImageWriter imageWriter)
         {
             this._repository = repository;
             this._mapper = mapper;
             this._linkGenerator = linkGenerator;
             this._localizer = localizer;
+            _imageWriter = imageWriter;
         }
 
         [HttpGet]
@@ -45,8 +49,12 @@ namespace IndividualsApi.Controllers
             var result = await _repository.GetIndividualAsync(id);
 
             if (result == null) return NotFound(_localizer["Individual could not be found"]);
- 
-            return Ok(_mapper.Map<IndividualModel>(result));
+
+            var model = _mapper.Map<IndividualModel>(result);
+
+            if(!string.IsNullOrEmpty(result.Image)) model.Image = _imageWriter.GetImage(result.Image);
+
+            return Ok(model);
         }
 
         [HttpGet("search")]

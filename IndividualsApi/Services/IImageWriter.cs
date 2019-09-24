@@ -10,5 +10,7 @@ namespace IndividualsApi.Services
     {
         Task<string> UploadImage(IFormFile file);
         bool DeleteImage(string location);
+
+        string GetImage(string location);
     }
 }
