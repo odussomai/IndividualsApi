@@ -20,14 +20,13 @@ namespace IndividualsApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //So that we can avoid same kind of relationship between same people
-            //(Relationship is "one-directional"
             modelBuilder.Entity<Relation>()
                 .HasOne(a => a.Individual)
                 .WithMany(a => a.Relatives)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-            
 
+            //So that we can avoid duplicate entries with same people and relationship 
+            //(Relationship is "one-directional")
             modelBuilder.Entity<Relation>().HasIndex(p => new {p.IndividualId, p.RelativeId, p.Type}).IsUnique();
 
             modelBuilder.Entity<City>(c => c.HasData(
