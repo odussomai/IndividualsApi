@@ -4963,6 +4963,22 @@
         "runtime": {
           "lib/netstandard2.0/X.PagedList.Web.Common.dll": {}
         }
+      },
+      "IndividualsApi.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
+          "X.PagedList.Mvc.Core": "7.9.1"
+        },
+        "compile": {
+          "bin/placeholder/IndividualsApi.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IndividualsApi.Data.dll": {}
+        }
       }
     }
   },
@@ -13460,11 +13476,17 @@
         "x.pagedlist.web.common.7.9.1.nupkg.sha512",
         "x.pagedlist.web.common.nuspec"
       ]
+    },
+    "IndividualsApi.Data/1.0.0": {
+      "type": "project",
+      "path": "../IndividualsApi.Data/IndividualsApi.Data.csproj",
+      "msbuildProject": "../IndividualsApi.Data/IndividualsApi.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
+      "IndividualsApi.Data >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -13504,7 +13526,11 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\.NET CORE\\IndividualsApi\\IndividualsApi.Data\\IndividualsApi.Data.csproj": {
+              "projectPath": "D:\\.NET CORE\\IndividualsApi\\IndividualsApi.Data\\IndividualsApi.Data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

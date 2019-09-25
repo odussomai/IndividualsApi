@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace IndividualsApi.Services
+namespace IndividualsApi.Data.Services
 {
     public interface IImageWriter
     {

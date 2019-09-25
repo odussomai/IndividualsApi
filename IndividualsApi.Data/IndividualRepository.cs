@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using IndividualsApi.Data.Entities;
-using IndividualsApi.Extensions;
 using Microsoft.EntityFrameworkCore;
 using X.PagedList;
 

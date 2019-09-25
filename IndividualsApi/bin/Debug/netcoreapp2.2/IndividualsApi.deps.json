@@ -25,6 +25,7 @@
       "IndividualsApi/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "IndividualsApi.Data": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
@@ -687,6 +688,20 @@
         },
         "compile": {
           "lib/netstandard2.0/X.PagedList.Web.Common.dll": {}
+        }
+      },
+      "IndividualsApi.Data/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.2.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
+          "X.PagedList.Mvc.Core": "7.9.1"
+        },
+        "runtime": {
+          "IndividualsApi.Data.dll": {}
+        },
+        "compile": {
+          "IndividualsApi.Data.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4104,6 +4119,11 @@
       "sha512": "sha512-u4kP6vKaCyfth/H+famPBfwliZp8t6g/BdG6tB4ZYUOZISNCTcvUJfXkoXQeGeLnFe3DkiqgHc0NE24++sPSTg==",
       "path": "x.pagedlist.web.common/7.9.1",
       "hashPath": "x.pagedlist.web.common.7.9.1.nupkg.sha512"
+    },
+    "IndividualsApi.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",

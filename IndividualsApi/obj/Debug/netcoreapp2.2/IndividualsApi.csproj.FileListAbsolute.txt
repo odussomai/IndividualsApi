@@ -38,3 +38,6 @@ D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsAp
 D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csprojAssemblyReference.cache
 D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Controllers.Individuals.resources
 D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.Controllers.Individuals.ka-GE.resources
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.Data.dll
+D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.Data.pdb
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.CopyComplete
