@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using IndividualsApi.Data;
+using IndividualsApi.Data.Interfaces;
 using IndividualsApi.Extensions;
 using IndividualsApi.Filters;
 using Microsoft.AspNetCore.Builder;

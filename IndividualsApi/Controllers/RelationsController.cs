@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using IndividualsApi.Data;
+﻿using System.Threading.Tasks;
 using IndividualsApi.Data.Entities;
+using IndividualsApi.Data.Enums;
+using IndividualsApi.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IndividualsApi.Controllers

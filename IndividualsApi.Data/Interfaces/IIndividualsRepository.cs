@@ -3,8 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IndividualsApi.Data.Enums;
 
-namespace IndividualsApi.Data
+namespace IndividualsApi.Data.Interfaces
 {
     public interface IIndividualsRepository
     {

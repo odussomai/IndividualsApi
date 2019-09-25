@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using IndividualsApi.Data;
 using IndividualsApi.Data.Entities;
+using IndividualsApi.Data.Interfaces;
 using IndividualsApi.Data.Services;
 using IndividualsApi.Filters;
 using IndividualsApi.Models;
@@ -47,8 +48,6 @@ namespace IndividualsApi.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<IndividualModel>> Get(int id)
         {
-            throw new Exception(_localizer["internal error"]);
-
             var result = await _repository.GetIndividualAsync(id);
 
             if (result == null) return NotFound(_localizer["Individual could not be found"]);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace IndividualsApi.Data.Entities
+﻿namespace IndividualsApi.Data.Entities
 {
     public class City
     {

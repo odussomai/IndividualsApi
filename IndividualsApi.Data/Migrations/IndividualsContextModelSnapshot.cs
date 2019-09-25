@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IndividualsApi.Migrations
+namespace IndividualsApi.Data.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
     partial class IndividualsContextModelSnapshot : ModelSnapshot
@@ -201,7 +201,7 @@ namespace IndividualsApi.Migrations
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Relation", b =>
                 {
-                    b.HasOne("IndividualsApi.Data.Entities.Individual", "individual")
+                    b.HasOne("IndividualsApi.Data.Entities.Individual", "Individual")
                         .WithMany("Relatives")
                         .HasForeignKey("IndividualId");
 

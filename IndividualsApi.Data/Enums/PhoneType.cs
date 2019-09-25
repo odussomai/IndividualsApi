@@ -1,4 +1,4 @@
-﻿namespace IndividualsApi.Data.Entities
+﻿namespace IndividualsApi.Data.Enums
 {
     public enum PhoneType
     {

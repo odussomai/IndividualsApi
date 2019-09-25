@@ -1,11 +1,18 @@
 ﻿using System;
 using IndividualsApi.Data.Entities;
+using IndividualsApi.Data.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace IndividualsApi.Data
 {
     public class IndividualsContext : DbContext
     {
+        public DbSet<Individual> Individuals { get; set; }
+        public DbSet<Relation> Relations { get; set; }
+        public DbSet<City> Cities { get; set; }
+        public DbSet<Phone> Phones { get; set; }
+
+
         public IndividualsContext(DbContextOptions<IndividualsContext> options)
             : base(options)
         {
@@ -13,10 +20,13 @@ namespace IndividualsApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //So that we can avoid same kind of relationship between same people
+            //(Relationship is "one-directional"
             modelBuilder.Entity<Relation>()
-                .HasOne(a => a.individual)
+                .HasOne(a => a.Individual)
                 .WithMany(a => a.Relatives)
                 .OnDelete(DeleteBehavior.ClientSetNull);
+            
 
             modelBuilder.Entity<Relation>().HasIndex(p => new {p.IndividualId, p.RelativeId, p.Type}).IsUnique();
 
@@ -98,26 +108,8 @@ namespace IndividualsApi.Data
                     Type = RelationType.Acquaintance,
                 });
             });
-            //    new Relation
-            //    {
-            //        IndividualId = 2,
-            //        RelativeId = 3,
-            //        Type = RelationType.Colleague,
-            //    },
-            //    new Relation
-            //    {
-            //        IndividualId = 2,
-            //        RelativeId = 3,
-            //        Type = RelationType.BloodRelative,
-            //    });
-            //});
-
-
         }
 
-        public DbSet<Individual> Individuals { get; set; }
-        public DbSet<Relation> Relations { get; set; }
-        public DbSet<City> Cities { get; set; }
-        public DbSet<Phone> Phones { get; set; }
+
     }
 }

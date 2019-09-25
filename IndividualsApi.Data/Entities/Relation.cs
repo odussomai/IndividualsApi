@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using IndividualsApi.Data.Enums;
 
 namespace IndividualsApi.Data.Entities
 {
@@ -10,7 +11,7 @@ namespace IndividualsApi.Data.Entities
         public int IndividualId { get; set; }
 
         [ForeignKey(nameof(IndividualId))]
-        public Individual individual{ get; set; }
+        public Individual Individual{ get; set; }
 
         public int RelativeId { get; set; }
 

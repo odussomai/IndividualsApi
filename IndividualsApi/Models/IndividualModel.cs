@@ -1,8 +1,8 @@
 ﻿using IndividualsApi.CustomValidators;
-using IndividualsApi.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using IndividualsApi.Data.Enums;
 
 namespace IndividualsApi.Models
 {
@@ -10,12 +10,14 @@ namespace IndividualsApi.Models
     {
         public int Id { get; set; }
 
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name should be between 2 and 50 characters")]
-        [Required(ErrorMessage = "Name is required")]
+        [Required(ErrorMessage = "{0} is required")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "{0} must be minimum length of 2 and max 50")]
+        [RegularExpression("(^[a-zA-Z]+$|^[ა-ჰ]+$)", ErrorMessage = "{0} must be only in Georgian, or Latin alphabet")]
         public string FirstName { get; set; }
 
-        [StringLength(50, MinimumLength = 2, ErrorMessage = "Name should be between 2 and 50 characters")]
-        [Required(ErrorMessage = "Surname is required")]
+        [Required(ErrorMessage = "{0} is required")]
+        [StringLength(50, MinimumLength = 2, ErrorMessage = "{0} must be minimum length of 2 and max 50")]
+        [RegularExpression("(^[a-zA-Z]+$|^[ა-ჰ]+$)", ErrorMessage = "{0} must be only in Georgian, or Latin alphabet")]
         public string LastName { get; set; }
 
         [Range(0, 1)]

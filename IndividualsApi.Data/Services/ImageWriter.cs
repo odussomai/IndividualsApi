@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
-using IndividualsApi.Helpers.ImageWriter.Helper;
+using IndividualsApi.Data.Helpers.ImageWriter.Helper;
+using IndividualsApi.Data.Interfaces;
 using Microsoft.AspNetCore.Http;
 
 namespace IndividualsApi.Data.Services

@@ -1,4 +1,4 @@
-﻿namespace IndividualsApi.Helpers
+﻿namespace IndividualsApi.Data.Helpers
 {
     using System.Linq;
     using System.Text;

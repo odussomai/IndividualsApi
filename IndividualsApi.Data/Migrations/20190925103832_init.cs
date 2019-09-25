@@ -85,13 +85,13 @@ namespace IndividualsApi.Data.Migrations
                         column: x => x.IndividualId,
                         principalTable: "Individuals",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Relations_Individuals_RelativeId",
                         column: x => x.RelativeId,
                         principalTable: "Individuals",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(

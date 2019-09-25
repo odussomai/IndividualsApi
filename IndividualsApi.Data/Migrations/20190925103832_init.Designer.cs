@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace IndividualsApi.Migrations
+namespace IndividualsApi.Data.Migrations
 {
     [DbContext(typeof(IndividualsContext))]
-    [Migration("20190924113003_seed")]
-    partial class seed
+    [Migration("20190925103832_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -203,7 +203,7 @@ namespace IndividualsApi.Migrations
 
             modelBuilder.Entity("IndividualsApi.Data.Entities.Relation", b =>
                 {
-                    b.HasOne("IndividualsApi.Data.Entities.Individual", "individual")
+                    b.HasOne("IndividualsApi.Data.Entities.Individual", "Individual")
                         .WithMany("Relatives")
                         .HasForeignKey("IndividualId");
 

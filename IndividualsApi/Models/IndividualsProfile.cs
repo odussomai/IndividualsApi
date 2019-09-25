@@ -1,12 +1,7 @@
 ﻿using AutoMapper;
 using IndividualsApi.Data.Entities;
-using IndividualsApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace IndividualsApi.Data
+namespace IndividualsApi.Models
 {
     public class IndividualsProfile : Profile
     {

@@ -41,3 +41,4 @@ D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsAp
 D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.Data.dll
 D:\.NET CORE\IndividualsApi\IndividualsApi\bin\Debug\netcoreapp2.2\IndividualsApi.Data.pdb
 D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.csproj.CopyComplete
+D:\.NET CORE\IndividualsApi\IndividualsApi\obj\Debug\netcoreapp2.2\IndividualsApi.Resources.SharedResource.resources

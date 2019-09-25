@@ -1,5 +1,6 @@
 ﻿using IndividualsApi.Data.Entities;
 using System.ComponentModel.DataAnnotations;
+using IndividualsApi.Data.Enums;
 
 namespace IndividualsApi.Models
 {
