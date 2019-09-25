@@ -11,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using IndividualsApi.Data.Services;
-using IndividualsApi.Resources;
 using Newtonsoft.Json;
 
 namespace IndividualsApi

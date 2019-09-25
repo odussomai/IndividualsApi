@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Please enter proper personal Id" xml:space="preserve">
-    <value>გთხოვთ შეიყვანოთ პირადი ნომერი სწორად</value>
+    <value>გთხოვთ შეიყვანოთ სწორი პირადი ნომერი</value>
   </data>
 </root>
