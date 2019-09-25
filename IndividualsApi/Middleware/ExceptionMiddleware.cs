@@ -18,7 +18,7 @@ namespace IndividualsApi.Middleware
                                    IStringLocalizer<ExceptionMiddleware> localizer)
         {
             _logger = logger;
-            this._localizer = localizer;
+            _localizer = localizer;
             _next = next;
         }
 
